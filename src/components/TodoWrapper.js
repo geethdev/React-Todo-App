@@ -18,7 +18,7 @@ const TodoWrapper = () => {
     <div className="TodoWrapper">
       <TodoForm addTodo={addTodo} />
       {todos.map((todo, index) => {
-        <Todo fask={todo} key={index} />;
+        <Todo task={todo} key={index} />;
       })}
     </div>
   );

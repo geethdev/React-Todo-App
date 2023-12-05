@@ -4,14 +4,21 @@ const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
+    // prevent default action
     e.preventDefault();
-    addTodo(value);
+    if (value) {
+      // add todo
+      addTodo(value);
+      // clear form after submission
+      setValue("");
+    }
   };
   return (
     <form className="TodoForm" onSubmit={handleSubmit}>
       <input
         type="text"
         className="todo-input"
+        value={value}
         placeholder="What is the task today?"
         onChange={(e) => setValue(e.target.value)}
       />

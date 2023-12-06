@@ -17,9 +17,9 @@ const TodoWrapper = () => {
   return (
     <div className="TodoWrapper">
       <TodoForm addTodo={addTodo} />
-      {todos.map((todo, index) => {
-        <Todo task={todo} key={index} />;
-      })}
+      {todos.map((todo, index) => (
+        <Todo task={todo} key={index} />
+      ))}
     </div>
   );
 };
